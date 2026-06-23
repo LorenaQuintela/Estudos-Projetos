@@ -1,5 +1,4 @@
-#Desenvolva uma calculadora em python com tudo que você aprendeu nos capitulos até aqui no curso, sem pesquisar, organize os passos a passos e comece a desenvolver. Tudo que você viu até aqui, você tem capacidade de realizar esse desafio.
-
+''' Calculadora em Python refatorada de um projeto que ja tinha feito a muito tempo de projeto1_calculadora.py, aqui usando conceitos que simulam nossa calculadora do notebook ou celular, dando um valor atual e usando esse valor para fazer as operações.'''
 def soma (a, b):
     return a + b
   
