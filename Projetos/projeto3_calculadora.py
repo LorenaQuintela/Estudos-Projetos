@@ -1,0 +1,59 @@
+#Desenvolva uma calculadora em python com tudo que você aprendeu nos capitulos até aqui no curso, sem pesquisar, organize os passos a passos e comece a desenvolver. Tudo que você viu até aqui, você tem capacidade de realizar esse desafio.
+
+def soma (a, b):
+    return a + b
+  
+def subtracao(a, b):
+    return a - b
+   
+def multiplicacao(a, b):
+   return a * b
+   
+def divisao (a, b):
+  return a / b
+
+def exibir_menu():
+    print(' ===  Calculadora em Python === ')
+
+    print('Selecione o número da operação desejada:')
+    print('1 - Soma')
+    print('2 - Subtração')
+    print('3 - Multiplicação')
+    print('4 - Divisão')
+    print('0 - Sair')
+
+opcoes_validas = {"1", "2", "3", "4", "0"}
+
+resultado_atual = float(input("Digite o valor inicial: "))
+
+while True:
+  print(f"Resultado atual: {resultado_atual}\n")
+  exibir_menu()
+
+  opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
+
+  if opcao_escolhida == "0":
+    break
+    
+  if opcao_escolhida not in opcoes_validas:
+     print("\nOpção Inválida!")
+     print("Opções válidas 1, 2, 3, 4 e 0\n")
+
+     continue
+
+  valor_operando = float(input("Digite o próximo valor do operando: "))
+
+  if opcao_escolhida == "1":
+    resultado_atual = soma(resultado_atual, valor_operando)
+  elif opcao_escolhida == "2":
+    resultado_atual = subtracao(resultado_atual, valor_operando)
+  elif opcao_escolhida == "3":
+    resultado_atual = multiplicacao(resultado_atual, valor_operando)
+  elif opcao_escolhida == "4":
+    resultado_atual = divisao(resultado_atual, valor_operando)
+  else:
+    print('Opção inválida!')
+    print("Selecione um dos números (1/2/3/4/0)")
+
+print("Encerrando a Calculadora. Até mais!")
+
