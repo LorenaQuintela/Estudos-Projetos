@@ -1,47 +1,59 @@
 #Desenvolva uma calculadora em python com tudo que você aprendeu nos capitulos até aqui no curso, sem pesquisar, organize os passos a passos e comece a desenvolver. Tudo que você viu até aqui, você tem capacidade de realizar esse desafio.
 
+def soma (a, b):
+    return a + b
+  
+def subtracao(a, b):
+    return a - b
+   
+def multiplicacao(a, b):
+   return a * b
+   
+def divisao (a, b):
+  return a / b
 
+def exibir_menu():
+    print(' ===  Calculadora em Python === ')
 
-print('*************** Calculadora em Python *******************')
+    print('Selecione o número da operação desejada:')
+    print('1 - Soma')
+    print('2 - Subtração')
+    print('3 - Multiplicação')
+    print('4 - Divisão')
+    print('0 - Sair')
 
-print('Selecione o número da operação desejada:')
-print('1 - Soma')
-print('2 - Subtração')
-print('3 - Multiplicação')
-print('4 - Divisão')
-opcao = int(input('Digite sua opção: (1/2/3/4): '))
-if opcao == 1:
-  def Soma ():
-    print("Você escolheu a operação SOMA!")
-    num1 = int(input('Digite o primeiro número: '))
-    num2 = int(input('Digite o segundo número: '))
-    resultado_soma = num1 + num2
-    print('A soma dos números', num1, "e", num2, ' é =', resultado_soma)
-  Soma()
-elif opcao == 2:
-  print("Você Escolheu a operação de SUBTRAÇÃO!")
-  def Subtracao():
-    num1 = int(input('Digite o primeiro número: '))
-    num2 = int(input('Digite o segundo número: '))
-    resultado_sub = num1 - num2
-    print('A subtração dos números ', num1, 'e', num2, 'é =', resultado_sub)
-  Subtracao()
-elif opcao == 3:
-  def Multiplicacao():
-   print("Você escolheu a operação de MULTIPLICAÇÃO!")
-   num1 = int(input('Digite o primeiro número: '))
-   num2 = int(input('Digite o segundo número: '))
-   resultado_mult = num1 * num2
-   print('A Multiplicação dos números ', num1, 'e', num2, 'é =', resultado_mult)
-  Multiplicacao()
-elif opcao == 4:
-  def Divisao ():
-    print("Você escolhe a operação de DIVISÃO!")
-    num1 = int(input('Digite o primeiro número: '))
-    num2 = int(input('Digite o segundo número: '))
-    resultado_div = num1 / num2
-    print('A Divisão dos números ', num1, 'e', num2, 'é =', resultado_div)
-  Divisao()
-else:
-  print('Opção inválida!')
-  print("Selecione um dos números (1/2/3/4)")
+opcoes_validas = {"1", "2", "3", "4", "0"}
+
+resultado_atual = float(input("Digite o valor inicial: "))
+
+while True:
+  print(f"Resultado atual: {resultado_atual}\n")
+  exibir_menu()
+
+  opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
+
+  if opcao_escolhida == "0":
+    break
+    
+  if opcao_escolhida not in opcoes_validas:
+     print("\nOpção Inválida!")
+     print("Opções válidas 1, 2, 3, 4 e 0\n")
+
+     continue
+
+  valor_operando = float(input("Digite o próximo valor do operando: "))
+
+  if opcao_escolhida == "1":
+    resultado_atual = soma(resultado_atual, valor_operando)
+  elif opcao_escolhida == "2":
+    resultado_atual = subtracao(resultado_atual, valor_operando)
+  elif opcao_escolhida == "3":
+    resultado_atual = multiplicacao(resultado_atual, valor_operando)
+  elif opcao_escolhida == "4":
+    resultado_atual = divisao(resultado_atual, valor_operando)
+  else:
+    print('Opção inválida!')
+    print("Selecione um dos números (1/2/3/4/0)")
+
+print("Encerrando a Calculadora. Até mais!")
+
