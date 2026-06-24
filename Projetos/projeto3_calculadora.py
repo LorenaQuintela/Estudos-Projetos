@@ -21,12 +21,21 @@ def exibir_menu():
     print('4 - Divisão')
     print('0 - Sair')
 
+def formatar_resultado(resultado):
+   if resultado.is_integer(): 
+      resultado_convertido = int(resultado)
+
+      return resultado_convertido
+   
+   return resultado
+
 opcoes_validas = {"1", "2", "3", "4", "0"}
 
 resultado_atual = float(input("Digite o valor inicial: "))
 
 while True:
-  print(f"Resultado atual: {resultado_atual}\n")
+  resultado_formatado = formatar_resultado(resultado_atual)
+  print(f"Resultado atual: {resultado_formatado}\n")
   exibir_menu()
 
   opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
