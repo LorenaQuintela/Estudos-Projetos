@@ -54,7 +54,6 @@ while True:
   except ValueError:
      print("\nNúmero inválido")
      continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
-
   if opcao_escolhida == "1":
     resultado_atual = soma(resultado_atual, valor_operando)
   elif opcao_escolhida == "2":
@@ -62,10 +61,10 @@ while True:
   elif opcao_escolhida == "3":
     resultado_atual = multiplicacao(resultado_atual, valor_operando)
   elif opcao_escolhida == "4":
-    resultado_atual = divisao(resultado_atual, valor_operando)
-  else:
-    print('Opção inválida!')
-    print("Selecione um dos números (1/2/3/4/0)")
-
+    try:
+      resultado_atual = divisao(resultado_atual, valor_operando)
+    except ZeroDivisionError:
+       print("\nNão se pode dividir por zero!")
+ 
 print("Encerrando a Calculadora. Até mais!")
 
