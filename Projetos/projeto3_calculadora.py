@@ -48,8 +48,12 @@ while True:
      print("Opções válidas 1, 2, 3, 4 e 0\n")
 
      continue
-
-  valor_operando = float(input("Digite o próximo valor do operando: "))
+  
+  try:
+    valor_operando = float(input("Digite o próximo valor do operando: "))
+  except ValueError:
+     print("\nNúmero inválido")
+     continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
 
   if opcao_escolhida == "1":
     resultado_atual = soma(resultado_atual, valor_operando)
