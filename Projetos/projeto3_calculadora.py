@@ -29,42 +29,48 @@ def formatar_resultado(resultado):
    
    return resultado
 
-opcoes_validas = {"1", "2", "3", "4", "0"}
+def main():
+  opcoes_validas = {"1", "2", "3", "4", "0"}
 
-resultado_atual = float(input("Digite o valor inicial: "))
-
-while True:
-  resultado_formatado = formatar_resultado(resultado_atual)
-  print(f"Resultado atual: {resultado_formatado}\n")
-  exibir_menu()
-
-  opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
-
-  if opcao_escolhida == "0":
-    break
-    
-  if opcao_escolhida not in opcoes_validas:
-     print("\nOpção Inválida!")
-     print("Opções válidas 1, 2, 3, 4 e 0\n")
-
-     continue
-  
   try:
-    valor_operando = float(input("Digite o próximo valor do operando: "))
+    resultado_atual = float(input("Digite o valor inicial: "))
   except ValueError:
-     print("\nNúmero inválido")
-     continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
-  if opcao_escolhida == "1":
-    resultado_atual = soma(resultado_atual, valor_operando)
-  elif opcao_escolhida == "2":
-    resultado_atual = subtracao(resultado_atual, valor_operando)
-  elif opcao_escolhida == "3":
-    resultado_atual = multiplicacao(resultado_atual, valor_operando)
-  elif opcao_escolhida == "4":
-    try:
-      resultado_atual = divisao(resultado_atual, valor_operando)
-    except ZeroDivisionError:
-       print("\nNão se pode dividir por zero!")
- 
-print("Encerrando a Calculadora. Até mais!")
+    print("Número inicial inválido")
+    return #Não precisa passar valor quando é para encerrar o fluxo.
+    
+  while True:
+    resultado_formatado = formatar_resultado(resultado_atual)
+    print(f"Resultado atual: {resultado_formatado}\n")
+    exibir_menu()
 
+    opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
+
+    if opcao_escolhida == "0":
+      break
+      
+    if opcao_escolhida not in opcoes_validas:
+      print("\nOpção Inválida!")
+      print("Opções válidas 1, 2, 3, 4 e 0\n")
+
+      continue
+    
+    try:
+      valor_operando = float(input("Digite o próximo valor do operando: "))
+    except ValueError:
+      print("\nNúmero inválido")
+      continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
+    if opcao_escolhida == "1":
+      resultado_atual = soma(resultado_atual, valor_operando)
+    elif opcao_escolhida == "2":
+      resultado_atual = subtracao(resultado_atual, valor_operando)
+    elif opcao_escolhida == "3":
+      resultado_atual = multiplicacao(resultado_atual, valor_operando)
+    elif opcao_escolhida == "4":
+      try:
+        resultado_atual = divisao(resultado_atual, valor_operando)
+      except ZeroDivisionError:
+        print("\nNão se pode dividir por zero!")
+  
+  print("Encerrando a Calculadora. Até mais!")
+
+main()
