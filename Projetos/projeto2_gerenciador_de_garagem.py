@@ -46,7 +46,7 @@ def deletar_carro():
     return
   
   carros.remove(carro_retornado)
-  print("Carro removido com sucesso!")
+  print("\nCarro removido com sucesso!")
     
 def exibir_menu():
   print("\n--- GERENCIADOR DE GARAGEM ---\n")
@@ -68,7 +68,7 @@ while True:
   elif opcao == "3":
     print("\nAinda desenvolvendo")
   elif opcao == "4":
-    print("\nAinda desenvolvendo")
+    deletar_carro()
   elif opcao == "5":
     print("\nEncerrando o Gerenciador de Garagem! Até mais.")
     break
@@ -78,5 +78,9 @@ while True:
 
 
 def editar_carro():
-  return
+  placa = input("Digite a placa do carro que deseja atualizar: ")
 
+  nova_placa = input(f"Nova placa (atual:{carro["placa"]}): ")
+  nova_cor = input(f"Nova cor (atual: {carro["cor"]}): ")
+  novo_modelo = input(f"Novo modelo (atual: {carro["modelo"]}): ")
+  novo_ano = input(f"Novo ano (atual: {carro["ano"]}): ")
