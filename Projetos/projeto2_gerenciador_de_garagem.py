@@ -71,8 +71,15 @@ def editar_carro():
     dicionario_atualizacao["modelo"] = novo_modelo
 
   novo_ano = input(f"Novo ano (atual: {carro_existente["ano"]}): ")
-  if len(nova_cor) > 0:
+  if len(novo_ano) > 0:
     dicionario_atualizacao["ano"] = int(novo_ano)
+
+  carro_existente["placa"] = dicionario_atualizacao["placa"]
+  carro_existente["cor"] = dicionario_atualizacao["cor"]
+  carro_existente["modelo"] = dicionario_atualizacao["modelo"]
+  carro_existente["ano"] = dicionario_atualizacao["ano"]
+
+  print("\nCarro editado com êxito.")
 
 #Precisa referenciar uma informação única no caso (Placa)
 def deletar_carro():
@@ -105,7 +112,7 @@ while True:
   elif opcao == "2":
     listar_carros()
   elif opcao == "3":
-    print("\nAinda desenvolvendo")
+    editar_carro()
   elif opcao == "4":
     deletar_carro()
   elif opcao == "5":
