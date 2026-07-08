@@ -106,7 +106,7 @@ def exibir_menu():
 while True:
   exibir_menu()
 
-  opcao = input("Escolha uma opção: ")
+  opcao = input("Escolha uma opção: ").strip()
 
   if opcao == "1":
     cadastrar_carro()
