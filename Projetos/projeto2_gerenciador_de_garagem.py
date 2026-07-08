@@ -14,6 +14,12 @@ def encontrar_carro(placa):
 
 def cadastrar_carro():
   placa = input("Digite a placa: ")
+
+  carro_existente = encontrar_carro(placa)
+  if carro_existente != None:
+    print("\nJá existe um carro cadastrado com essa placa.")
+    return
+
   cor = input("Digite a cor: ")
   modelo = input("Digite o modelo: ")
   ano = int(input("Digite o ano: "))
