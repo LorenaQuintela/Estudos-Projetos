@@ -3,10 +3,11 @@
 carros = []
 
 def encontrar_carro(placa):
+
   carro_encontrado = None
 
   for carro in carros:
-    if carro["placa"] == placa:
+    if carro["placa"].lower() == placa.lower():
       carro_encontrado = carro
       break
   return carro_encontrado
