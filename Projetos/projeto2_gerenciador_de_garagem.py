@@ -51,6 +51,10 @@ def cadastrar_carro():
   print("\nCarro cadastrado com sucesso!")
 
 def listar_carros():
+  if len(carros) == 0:
+    print("\nNenhum carro cadastrado.")
+    return
+  
   print("\n---------------------- LISTA DE CARROS ------------------------")
   
   for carro in carros:
