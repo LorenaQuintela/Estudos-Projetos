@@ -15,13 +15,25 @@ def encontrar_carro(placa):
 def cadastrar_carro():
   placa = input("Digite a placa: ").strip()
 
+  if len(placa) == 0:
+    print("\nO campo placa não pode ser vazio.")
+    return
+  
   carro_existente = encontrar_carro(placa)
   if carro_existente != None:
     print("\nJá existe um carro cadastrado com essa placa.")
     return
-
+  
   cor = input("Digite a cor: ").strip()
+  if len(cor) == 0:
+    print("\nO campo cor não pode ser vazio.")
+    return
+
   modelo = input("Digite o modelo: ").strip()
+  if len(modelo) == 0:
+    print("\nO campo modelo não pode ser vazio.")
+    return
+  
   ano = int(input("Digite o ano: "))
 
   carro = {
