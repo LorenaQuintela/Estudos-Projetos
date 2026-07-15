@@ -19,6 +19,8 @@ def exibir_menu():
     print('2 - Subtração')
     print('3 - Multiplicação')
     print('4 - Divisão')
+    print('5 - Raiz quadrada(do resultado atual)')
+    print('6 - Logaritimo base 2 (do resultado atual)')
     print('0 - Sair')
 
 def formatar_resultado(resultado):
@@ -30,7 +32,7 @@ def formatar_resultado(resultado):
    return resultado
 
 def main():
-  opcoes_validas = {"1", "2", "3", "4", "0"}
+  opcoes_validas = {"1", "2", "3", "4", "5", "5", "0"}
 
   try:
     resultado_atual = float(input("Digite o valor inicial: "))
@@ -43,14 +45,14 @@ def main():
     print(f"Resultado atual: {resultado_formatado}\n")
     exibir_menu()
 
-    opcao_escolhida = input('Digite sua opção: (1/2/3/4/0): ')
+    opcao_escolhida = input('Digite sua opção: (1/2/3/4/5/6/0): ')
 
     if opcao_escolhida == "0":
       break
       
     if opcao_escolhida not in opcoes_validas:
       print("\nOpção Inválida!")
-      print("Opções válidas 1, 2, 3, 4 e 0\n")
+      print("Opções válidas 1, 2, 3, 4, 5, 6 e 0\n")
 
       continue
     
