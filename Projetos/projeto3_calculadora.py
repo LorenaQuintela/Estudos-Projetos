@@ -82,10 +82,15 @@ def main():
       except ZeroDivisionError:
         print("\nNão se pode dividir por zero!")
     elif opcao_escolhida == "5":
-      #resultado_atual = raiz_quadrada(resultado_atual)
-      print("aqui vamos calcular a raiz quadrada")
+      try:
+        resultado_atual = raiz_quadrada(resultado_atual)
+      except ValueError:
+        print("\nNão é possivel calcular raiz quadrada para números negativos.")
     elif opcao_escolhida == "6":
-      print("Aqui vamos calcular o logaritimo")
+      try:
+        resultado_atual = logaritimo(resultado_atual)
+      except ValueError:
+        print("\nLogaritimo na base só pode ser definido para números positivos e diferente de O.")
   
   print("Encerrando a Calculadora. Até mais!")
 
