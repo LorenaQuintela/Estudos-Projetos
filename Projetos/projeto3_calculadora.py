@@ -20,14 +20,14 @@ def logaritimo(a):
   return log2(a)
 
 def exibir_menu():
-    print(' ===  Calculadora em Python === ')
+    print('\n===  Calculadora em Python === ')
 
     print('Selecione o número da operação desejada:')
     print('1 - Soma')
     print('2 - Subtração')
     print('3 - Multiplicação')
     print('4 - Divisão')
-    print('5 - Raiz quadrada(do resultado atual)')
+    print('5 - Raiz quadrada (do resultado atual)')
     print('6 - Logaritimo base 2 (do resultado atual)')
     print('0 - Sair')
 
@@ -40,7 +40,7 @@ def formatar_resultado(resultado):
    return resultado
 
 def main():
-  opcoes_validas = {"1", "2", "3", "4", "5", "5", "0"}
+  opcoes_validas = {"1", "2", "3", "4", "5", "6", "0"}
 
   try:
     resultado_atual = float(input("Digite o valor inicial: "))
@@ -64,11 +64,12 @@ def main():
 
       continue
     
-    try:
-      valor_operando = float(input("Digite o próximo valor do operando: "))
-    except ValueError:
-      print("\nNúmero inválido")
-      continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
+    if opcao_escolhida in {"1", "2", "3", "4"}:
+      try:
+        valor_operando = float(input("Digite o próximo valor do operando: "))
+      except ValueError:
+        print("\nNúmero inválido")
+        continue #Vai pular os ifs abaixo e vai voltar para o inicio do while
     if opcao_escolhida == "1":
       resultado_atual = soma(resultado_atual, valor_operando)
     elif opcao_escolhida == "2":
@@ -80,6 +81,11 @@ def main():
         resultado_atual = divisao(resultado_atual, valor_operando)
       except ZeroDivisionError:
         print("\nNão se pode dividir por zero!")
+    elif opcao_escolhida == "5":
+      #resultado_atual = raiz_quadrada(resultado_atual)
+      print("aqui vamos calcular a raiz quadrada")
+    elif opcao_escolhida == "6":
+      print("Aqui vamos calcular o logaritimo")
   
   print("Encerrando a Calculadora. Até mais!")
 
