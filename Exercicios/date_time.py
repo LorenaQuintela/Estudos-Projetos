@@ -9,3 +9,5 @@ data_date  = datetime.strptime(data_string, data_formato)
 data_formatada = data_date.strftime( "%d/%m/%Y")
 print(data_formatada)
 print(type(data_date))
+
+print(f"Mês anterior ao mês da data: {data_date.month -1}")
