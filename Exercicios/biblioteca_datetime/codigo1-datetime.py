@@ -10,11 +10,23 @@ elif (media >= 4.0) and (media < 7.0):
 
   data_prazo = date(2026, 1, 31)
 
-  data_prova_str = input("Informe quando o aluno fez a prova? (formato dd/mm/aaaa): ")
+  dia =  data_prazo.day
+  mes = data_prazo.month
+  ano = data_prazo.year
+
+  print(f"Prazo para a prova de recuperação: {dia}/{mes}/{ano}")
 
   formato_data = "%d/%m/%Y"
-  data_prova_date = date.strptime(data_prova_str, formato_data)
 
+  while True:
+    try:
+      data_prova_str = input("Informe quando o aluno fez a prova? (formato dd/mm/aaaa): ").strip()
+      data_prova_date = date.strptime(data_prova_str, formato_data)
+      break
+    except ValueError:
+      print("Formato de data inválido. Use dd/mm/yyyy")
+
+  
   if data_prova_date <= data_prazo:
     
     nota_recuperacao = float(input("Nota recuperação: "))
