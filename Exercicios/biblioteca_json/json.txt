@@ -1,0 +1,3 @@
+Biblioteca JSON é um formato leve para trocar e armazenar dados em texto. Guardamos, representamos e transmitimos 
+dados. Ela não é exclusiva do python, pois é um formato que existe em várias outras linguagens de programação.
+Ela permite representar dados em que diferentes linguagens de programação todas conseguem entender.
