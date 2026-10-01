@@ -1,8 +1,1 @@
-
-{
-    "nome": "Anna",
-    "idade": 25,
-    "email": "anna@email.com",
-    "desenvolvedora": true,
-    "estado": "Goias"
-}
+{"nome": "Lucas", "idade": 29, "altura": 1.81, "dev": true, "linguagem": ["Python", "Java", "Angular"]}
