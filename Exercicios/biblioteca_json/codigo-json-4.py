@@ -10,4 +10,7 @@ pessoa = {
 }
 
 with open("pessoa.json", "w") as arquivo_json:
-    json.dump(pessoa, arquivo_json)
+    json.dump(pessoa, arquivo_json, indent=2)
+
+
+print("Terminamos de gravar no arquivo")
