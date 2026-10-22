@@ -9,4 +9,4 @@ comando_2
 comando_3
 
 Após o comando_3 do exemplo, que é o último do bloco do with, o arquivo será automaticamente fechado,
-pois terminamos de trabalhar com ele.
+pois terminamos de trabalhar com ele..
