@@ -1,11 +1,16 @@
 # Crud de carros -> Gerenciador de Garagem que permita cadastrar, listar, editar, deletar e sair.
 import json
 
+def ler_carros_arquivo():
+  with open("carros.json", "r") as arquivo_json:
+    lista_convertida = json.load(arquivo_json)
+    return lista_convertida
+
 def salvar_carro():
   with open("carros.json", "w") as arquivo_json:
-    json.dump(carros, arquivo_json)
+    json.dump(carros, arquivo_json, indent=2)
 
-carros = []
+carros = ler_carros_arquivo() #Retorna lista convertida para dentro dessa lista que antes começava vazia
 
 def encontrar_carro(placa):
 
@@ -52,7 +57,8 @@ def cadastrar_carro():
     "ano": ano
   }
 
-  #dict_carros = json.dump(carros.append(carro))
+  carros.append(carro)
+  salvar_carro()
   print("\nCarro cadastrado com sucesso!")
 
 def listar_carros():
