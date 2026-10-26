@@ -2,8 +2,15 @@
 import json
 
 def ler_carros_arquivo():
-  with open("carros.json", "r") as arquivo_json:
-    lista_convertida = json.load(arquivo_json)
+  try:
+    with open("carros.json", "r") as arquivo_json:
+        lista_convertida = json.load(arquivo_json)
+        return lista_convertida
+  except FileNotFoundError:
+    print("Primeira execução. Arquivo vazio.")
+
+    # Na primeira execução se o programa não achar o arquivo, ele cria uma lista vazia e retorna ela. 
+    lista_convertida = []
     return lista_convertida
 
 def salvar_carro():
@@ -13,7 +20,6 @@ def salvar_carro():
 carros = ler_carros_arquivo() #Retorna lista convertida para dentro dessa lista que antes começava vazia
 
 def encontrar_carro(placa):
-
   carro_encontrado = None
 
   for carro in carros:
