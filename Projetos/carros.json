@@ -1,8 +1,14 @@
 [
   {
-    "placa": "cdc-2026",
-    "cor": "branco",
+    "placa": "gcg-1020",
+    "cor": "preto",
     "modelo": "gol",
-    "ano": 2018
+    "ano": 2016
+  },
+  {
+    "placa": "cdc-2026",
+    "cor": "preto",
+    "modelo": "prisma",
+    "ano": 2016
   }
 ]
