@@ -12,7 +12,13 @@ def ler_carros_arquivo():
     # Na primeira execução se o programa não achar o arquivo, ele cria uma lista vazia e retorna ela. 
     lista_convertida = []
     return lista_convertida
+  
+  except json.decoder.JSONDecodeError:
+    print("Conteúdo do arquivo não pode ser convertido.")
 
+    lista_convertida = []
+    return lista_convertida
+  
 def salvar_carro():
   with open("carros.json", "w") as arquivo_json:
     json.dump(carros, arquivo_json, indent=2)
@@ -126,6 +132,8 @@ def editar_carro():
   carro_existente["modelo"] = dicionario_atualizacao["modelo"]
   carro_existente["ano"] = dicionario_atualizacao["ano"]
 
+  salvar_carro()
+
   print("\nCarro editado com êxito.")
 
 #Precisa referenciar uma informação única no caso (Placa)
@@ -139,6 +147,8 @@ def deletar_carro():
     return
   
   carros.remove(carro_retornado)
+  salvar_carro()
+
   print("\nCarro removido com sucesso!")
     
 def exibir_menu():
